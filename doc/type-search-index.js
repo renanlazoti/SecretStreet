@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"View","l":"Ajuda"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"View","l":"Clientes"},{"p":"model","l":"DAO"},{"p":"View","l":"Fornecedores"},{"p":"View","l":"Login"},{"p":"View","l":"Principal"},{"p":"View","l":"Produtos"},{"p":"View","l":"Relatorios"},{"p":"View","l":"Usuarios"}];updateSearchResults();
