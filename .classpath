@@ -7,5 +7,10 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="src/View/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="src/View/Atxy2k.jar"/>
+	<classpathentry kind="lib" path="src/View/rs2xml.jar"/>
+	<classpathentry kind="lib" path="src/View/dom4j-2.1.3.jar"/>
+	<classpathentry kind="lib" path="src/View/itextpdf-5.5.9.jar"/>
+	<classpathentry kind="lib" path="src/View/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
