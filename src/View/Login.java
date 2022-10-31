@@ -1,5 +1,6 @@
 package View;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.sql.Connection;
@@ -150,18 +151,19 @@ public class Login extends JFrame {
 					 Principal principal = new Principal();
 					if (perfil.equals("admin")) {
 					 principal.setVisible(true);
-						// principal.btnRelatorios.setEnabled(true);
-					// principal.btnUsuarios.setEnabled(true);
-						// principal.panelUsuario.setBackground(Color.RED);
-						// principal.lblUsuario.setText("Usuário: " + rs.getString(2));
+						principal.lblUsuario.setText("Usuário: " + rs.getString(2));
+						principal.lblPerfil.setText("Login: " + rs.getString(5));
 
 						this.dispose();
 					} else {
 
-						//principal.setVisible(true);
-
-						//principal.lblUsuario.setText("Usuário: " + rs.getString(2));
-
+						principal.setVisible(true);
+						// setar o nome do usuario na tela principal
+						principal.lblUsuario.setText("Usuário: " + rs.getString(2));
+						principal.lblPerfil.setText("Login: " + rs.getString(5));
+						principal.panelUsuario.setBackground(Color.black);
+						// fechar a tela de login 
+						con.close();
 						this.dispose();
 					}
 

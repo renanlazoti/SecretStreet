@@ -435,6 +435,16 @@ public class Produtos extends JDialog {
 		lblNewLabel_14.setBounds(16, 341, 76, 14);
 		contentPanel.add(lblNewLabel_14);
 		
+		JButton btnNewButton = new JButton("Calcular");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				txtVenda.setText( String.valueOf(Double.parseDouble(txtCusto.getText()) * (1+Double.parseDouble(txtLucro.getText())/100)));
+			}
+		});
+		btnNewButton.setBounds(634, 447, 89, 23);
+		contentPanel.add(btnNewButton);
+		
 		
 	
 	} // fim do construtor
