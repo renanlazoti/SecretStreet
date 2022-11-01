@@ -83,7 +83,7 @@ public class Fornecedores extends JDialog {
 		setTitle("Fornecedores");
 		setBackground(Color.BLACK);
 		getContentPane().setBackground(Color.WHITE);
-		setBounds(100, 100, 952, 657);
+		setBounds(100, 100, 952, 651);
 		getContentPane().setLayout(null);
 		
 		JLabel lblFornecedor = new JLabel("Fornecedor");
@@ -233,6 +233,7 @@ public class Fornecedores extends JDialog {
 		getContentPane().add(txtForCEP);
 		
 		btnBuscarCep = new JButton("Buscar CEP");
+		btnBuscarCep.setEnabled(false);
 		btnBuscarCep.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnBuscarCep.setBackground(SystemColor.menu);
 		btnBuscarCep.setContentAreaFilled(false);
@@ -246,7 +247,6 @@ public class Fornecedores extends JDialog {
 				}
 			}
 		});
-		btnBuscarCep.setEnabled(false);
 		btnBuscarCep.setBounds(532, 350, 140, 23);
 		getContentPane().add(btnBuscarCep);
 		
@@ -358,7 +358,7 @@ public class Fornecedores extends JDialog {
 		btnAlterar.setBounds(437, 510, 64, 64);
 		getContentPane().add(btnAlterar);
 		
-		// Validação com o uso da biblioteca Atxy2k
+		// Validaï¿½ï¿½o com o uso da biblioteca Atxy2k
 		RestrictedTextField validarId = new RestrictedTextField(txtForID);
 		validarId.setOnlyNums(true);
 		validarId.setLimit(4);
@@ -409,7 +409,7 @@ public class Fornecedores extends JDialog {
 	DAO dao = new DAO();
 	
 	/**
-	 * Método responsável por buscar o CEP
+	 * Mï¿½todo responsï¿½vel por buscar o CEP
 	 */
 	private void buscarCEP() {
 		String logradouro = "";
@@ -443,12 +443,12 @@ public class Fornecedores extends JDialog {
 		        	if (resultado.equals("1")) {
 		
 		        	} else {
-		        		JOptionPane.showMessageDialog(null, "CEP não encontrado");
+		        		JOptionPane.showMessageDialog(null, "CEP nï¿½o encontrado");
 		        	}
 		        }
 
 		    }
-			// Setar Campo Endereço
+			// Setar Campo Endereï¿½o
 			txtForEndereco.setText(tipoLogradouro + " " + logradouro);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -457,7 +457,7 @@ public class Fornecedores extends JDialog {
 	
 	
 	/**
-	 * Método responsável pela pesquisa avançada do Fornecedor
+	 * Mï¿½todo responsï¿½vel pela pesquisa avanï¿½ada do Fornecedor
 	 * usando o nome de fantasia e a biblioteca rs2xml
 	 */
 	private void pesquisarFornecedorTabela() {
@@ -475,7 +475,7 @@ public class Fornecedores extends JDialog {
 	}
 	
 	/**
-	 * Método responsável por setar as caixas de texto
+	 * Mï¿½todo responsï¿½vel por setar as caixas de texto
 	 * de acordo com os campos da tabela
 	 */
 	private void setarCaixasTexto() {
@@ -495,7 +495,7 @@ public class Fornecedores extends JDialog {
 	}
 	
 	/**
-	 * Método responsável pela pesquisa de Fornecedores
+	 * Mï¿½todo responsï¿½vel pela pesquisa de Fornecedores
 	 */
 	private void pesquisarFornecedor() {
 		if (txtForPesquisarFornecedor.getText().isEmpty()) {
@@ -530,7 +530,7 @@ public class Fornecedores extends JDialog {
 					btnExcluir.setEnabled(true);
 					btnBuscarCep.setEnabled(true);
 				} else {
-					JOptionPane.showMessageDialog(null, "Fornecedor não cadastrado");
+					JOptionPane.showMessageDialog(null, "Fornecedor nï¿½o cadastrado");
 					limparCamposFornecedor();
 					limparCampos();
 					btnBuscarCep.setEnabled(true);
@@ -549,7 +549,7 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CNPJ do Fornecedor");
 			txtForCNPJ.requestFocus();
 		}	else if (txtForRazao.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite a razão social do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite a razï¿½o social do fornecedor");
 			txtForRazao.requestFocus();
 		}	else if (txtForFantasia.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite a fantasia do fornecedor");
@@ -561,10 +561,10 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CEP do fornecedor");
 			txtForCEP.requestFocus();
 		}	else if (txtForEndereco.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o endereço do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o endereï¿½o do fornecedor");
 			txtForEndereco.requestFocus();
 		}	else if (txtForNumero.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o número do local do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o nï¿½mero do local do fornecedor");
 			txtForNumero.requestFocus();
 		}	else if (txtForBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite o bairro do fornecedor");
@@ -621,7 +621,7 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CNPJ do Fornecedor");
 			txtForCNPJ.requestFocus();
 		}	else if (txtForRazao.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite a razão social do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite a razï¿½o social do fornecedor");
 			txtForRazao.requestFocus();
 		}	else if (txtForFantasia.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite a fantasia do fornecedor");
@@ -633,10 +633,10 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CEP do fornecedor");
 			txtForCEP.requestFocus();
 		}	else if (txtForEndereco.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o endereço do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o endereï¿½o do fornecedor");
 			txtForEndereco.requestFocus();
 		}	else if (txtForNumero.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o número do local do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o nï¿½mero do local do fornecedor");
 			txtForNumero.requestFocus();
 		}	else if (txtForBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite o bairro do fornecedor");
@@ -689,7 +689,7 @@ public class Fornecedores extends JDialog {
 	}
 	
 	private void excluirFornecedor() {
-		int confirma = JOptionPane.showConfirmDialog(null, "Deseja confirmar a exclusão do fornecedor ?","Atenção!",JOptionPane.YES_NO_OPTION);
+		int confirma = JOptionPane.showConfirmDialog(null, "Deseja confirmar a exclusï¿½o do fornecedor ?","Atenï¿½ï¿½o!",JOptionPane.YES_NO_OPTION);
 		if (confirma == JOptionPane.YES_OPTION) {
 			String delete = "delete from fornecedores where idfor=?";
 			try {
@@ -697,7 +697,7 @@ public class Fornecedores extends JDialog {
 				PreparedStatement pst = con.prepareStatement(delete);
 				pst.setString(1, txtForID.getText());
 				pst.executeUpdate();
-				JOptionPane.showMessageDialog(null, "Fornecedor excluído com sucesso!");
+				JOptionPane.showMessageDialog(null, "Fornecedor excluï¿½do com sucesso!");
 				limparCamposFornecedor();
 				limparCampos();
 				txtForPesquisarFornecedor.setText(null);
@@ -730,4 +730,4 @@ public class Fornecedores extends JDialog {
 		btnAlterar.setEnabled(false);
 		btnExcluir.setEnabled(false);
 	}
-}// Fim do código
+}// Fim do cï¿½digo
