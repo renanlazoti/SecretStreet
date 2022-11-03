@@ -67,7 +67,7 @@ public class Principal extends JFrame {
 		});
 		setTitle("Tela Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		setBounds(100, 100, 800, 583);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -77,7 +77,7 @@ public class Principal extends JFrame {
 		btnUsuarios = new JButton("");
 		btnUsuarios.setContentAreaFilled(false);
 		btnUsuarios.setBorderPainted(false);
-		btnUsuarios.setIcon(new ImageIcon(Principal.class.getResource("/img/iconuser3.png")));
+		btnUsuarios.setIcon(new ImageIcon(Principal.class.getResource("/img/iconuser novo png.png")));
 		btnUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Usuarios usuarios = new Usuarios();
@@ -92,7 +92,7 @@ public class Principal extends JFrame {
 		btnClientes = new JButton("");
 		btnClientes.setContentAreaFilled(false);
 		btnClientes.setBorderPainted(false);
-		btnClientes.setIcon(new ImageIcon(Principal.class.getResource("/img/iconcli3.png")));
+		btnClientes.setIcon(new ImageIcon(Principal.class.getResource("/img/iconcli novo png.png")));
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clientes clientes = new Clientes();
@@ -107,7 +107,7 @@ public class Principal extends JFrame {
 		btnFornecedores = new JButton("");
 		btnFornecedores.setBorderPainted(false);
 		btnFornecedores.setContentAreaFilled(false);
-		btnFornecedores.setIcon(new ImageIcon(Principal.class.getResource("/img/iconforne3.png")));
+		btnFornecedores.setIcon(new ImageIcon(Principal.class.getResource("/img/iconforne novo png.png")));
 		btnFornecedores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Fornecedores fornecedores = new Fornecedores();
@@ -122,7 +122,7 @@ public class Principal extends JFrame {
 		btnProdutos = new JButton("");
 		btnProdutos.setBorderPainted(false);
 		btnProdutos.setContentAreaFilled(false);
-		btnProdutos.setIcon(new ImageIcon(Principal.class.getResource("/img/iconprod3.png")));
+		btnProdutos.setIcon(new ImageIcon(Principal.class.getResource("/img/iconprod novo png.png")));
 		btnProdutos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnProdutos.setToolTipText("Produtos");
 		btnProdutos.addActionListener(new ActionListener() {
@@ -137,7 +137,7 @@ public class Principal extends JFrame {
 		btnRelatorios = new JButton("");
 		btnRelatorios.setContentAreaFilled(false);
 		btnRelatorios.setBorderPainted(false);
-		btnRelatorios.setIcon(new ImageIcon(Principal.class.getResource("/img/iconrelatorio3.png")));
+		btnRelatorios.setIcon(new ImageIcon(Principal.class.getResource("/img/iconrelatorio novo png.png")));
 		btnRelatorios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Relatorios relatorios = new Relatorios();
@@ -152,7 +152,7 @@ public class Principal extends JFrame {
 		btnAjuda = new JButton("");
 		btnAjuda.setBorderPainted(false);
 		btnAjuda.setContentAreaFilled(false);
-		btnAjuda.setIcon(new ImageIcon(Principal.class.getResource("/img/iconsobre3.png")));
+		btnAjuda.setIcon(new ImageIcon(Principal.class.getResource("/img/iconsobre novo png.png")));
 		btnAjuda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Ajuda ajuda = new Ajuda();
@@ -165,26 +165,26 @@ public class Principal extends JFrame {
 		contentPane.add(btnAjuda);
 		panelUsuario.setBackground(Color.BLACK);
 		panelUsuario.setForeground(Color.BLACK);
-		panelUsuario.setBounds(-24, 485, 823, 112);
+		panelUsuario.setBounds(-24, 467, 872, 112);
 		contentPane.add(panelUsuario);
 		panelUsuario.setLayout(null);
 		
 		lblUsuario = new JLabel("New label");
 		lblUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(56, 18, 138, 14);
+		lblUsuario.setBounds(56, 22, 138, 14);
 		panelUsuario.add(lblUsuario);
 		
 		lblPerfil = new JLabel("New label");
 		lblPerfil.setFont(new Font("Arial", Font.BOLD, 12));
 		lblPerfil.setForeground(Color.WHITE);
-		lblPerfil.setBounds(56, 43, 138, 14);
+		lblPerfil.setBounds(56, 47, 138, 14);
 		panelUsuario.add(lblPerfil);
 		
 		lblData = new JLabel("New label");
 		lblData.setFont(new Font("Arial", Font.BOLD, 14));
 		lblData.setForeground(Color.WHITE);
-		lblData.setBounds(371, 1, 438, 76);
+		lblData.setBounds(510, 4, 438, 76);
 		panelUsuario.add(lblData);
 		
 		lblNewLabel = new JLabel("");

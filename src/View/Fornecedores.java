@@ -36,6 +36,9 @@ import net.proteanit.sql.DbUtils;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EtchedBorder;
 
 public class Fornecedores extends JDialog {
 	private JTextField txtForPesquisarFornecedor;
@@ -86,10 +89,6 @@ public class Fornecedores extends JDialog {
 		setBounds(100, 100, 952, 651);
 		getContentPane().setLayout(null);
 		
-		JLabel lblFornecedor = new JLabel("Fornecedor");
-		lblFornecedor.setBounds(45, 43, 207, 14);
-		getContentPane().add(lblFornecedor);
-		
 		txtForPesquisarFornecedor = new JTextField();
 		txtForPesquisarFornecedor.setBackground(SystemColor.menu);
 		txtForPesquisarFornecedor.addKeyListener(new KeyAdapter() {
@@ -99,7 +98,7 @@ public class Fornecedores extends JDialog {
 			}
 		});
 		txtForPesquisarFornecedor.setColumns(10);
-		txtForPesquisarFornecedor.setBounds(130, 40, 499, 20);
+		txtForPesquisarFornecedor.setBounds(45, 40, 590, 20);
 		getContentPane().add(txtForPesquisarFornecedor);
 		
 		btnPesquisar = new JButton("Buscar");
@@ -111,7 +110,7 @@ public class Fornecedores extends JDialog {
 				pesquisarFornecedor();
 			}
 		});
-		btnPesquisar.setBounds(686, 39, 89, 23);
+		btnPesquisar.setBounds(675, 39, 89, 23);
 		getContentPane().add(btnPesquisar);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -131,105 +130,105 @@ public class Fornecedores extends JDialog {
 		scrollPane.setViewportView(tblFornecedor);
 		
 		JLabel lblIm = new JLabel("Fantasia");
-		lblIm.setBounds(45, 207, 201, 14);
+		lblIm.setBounds(45, 222, 201, 14);
 		getContentPane().add(lblIm);
 		
 		txtForFantasia = new JTextField();
 		txtForFantasia.setBackground(SystemColor.menu);
 		txtForFantasia.setColumns(10);
-		txtForFantasia.setBounds(130, 204, 276, 20);
+		txtForFantasia.setBounds(130, 219, 276, 20);
 		getContentPane().add(txtForFantasia);
 		
 		JLabel lblIe_1 = new JLabel("I.E");
-		lblIe_1.setBounds(45, 235, 175, 14);
+		lblIe_1.setBounds(45, 250, 175, 14);
 		getContentPane().add(lblIe_1);
 		
 		txtForIE = new JTextField();
 		txtForIE.setBackground(SystemColor.menu);
 		txtForIE.setColumns(10);
-		txtForIE.setBounds(130, 232, 170, 20);
+		txtForIE.setBounds(130, 247, 170, 20);
 		getContentPane().add(txtForIE);
 		
 		JLabel lblIe_1_1 = new JLabel("ID");
-		lblIe_1_1.setBounds(800, 44, 131, 14);
+		lblIe_1_1.setBounds(795, 44, 131, 14);
 		getContentPane().add(lblIe_1_1);
 		
 		txtForID = new JTextField();
 		txtForID.setBackground(SystemColor.menu);
 		txtForID.setEditable(false);
 		txtForID.setColumns(10);
-		txtForID.setBounds(834, 41, 55, 20);
+		txtForID.setBounds(825, 41, 64, 20);
 		getContentPane().add(txtForID);
 		
 		JLabel lblCnpj = new JLabel("CNPJ");
-		lblCnpj.setBounds(45, 179, 175, 14);
+		lblCnpj.setBounds(45, 194, 175, 14);
 		getContentPane().add(lblCnpj);
 		
 		txtForCNPJ = new JTextField();
 		txtForCNPJ.setBackground(SystemColor.menu);
 		txtForCNPJ.setForeground(Color.BLACK);
 		txtForCNPJ.setColumns(10);
-		txtForCNPJ.setBounds(130, 176, 220, 20);
+		txtForCNPJ.setBounds(130, 191, 220, 20);
 		getContentPane().add(txtForCNPJ);
 		
 		JLabel lblRazao = new JLabel("Raz\u00E3o");
-		lblRazao.setBounds(437, 204, 276, 14);
+		lblRazao.setBounds(437, 228, 276, 14);
 		getContentPane().add(lblRazao);
 		
 		txtForRazao = new JTextField();
 		txtForRazao.setBackground(SystemColor.menu);
 		txtForRazao.setColumns(10);
-		txtForRazao.setBounds(504, 201, 385, 20);
+		txtForRazao.setBounds(504, 225, 385, 20);
 		getContentPane().add(txtForRazao);
 		
 		JLabel lblIe = new JLabel("I.M");
-		lblIe.setBounds(45, 263, 225, 14);
+		lblIe.setBounds(45, 278, 225, 14);
 		getContentPane().add(lblIe);
 		
 		txtForIM = new JTextField();
 		txtForIM.setBackground(SystemColor.menu);
 		txtForIM.setColumns(10);
-		txtForIM.setBounds(130, 263, 170, 20);
+		txtForIM.setBounds(130, 278, 170, 20);
 		getContentPane().add(txtForIM);
 		
 		JLabel lblRazo = new JLabel("Fone");
-		lblRazo.setBounds(45, 294, 225, 14);
+		lblRazo.setBounds(45, 309, 225, 14);
 		getContentPane().add(lblRazo);
 		
 		txtForFone = new JTextField();
 		txtForFone.setBackground(SystemColor.menu);
 		txtForFone.setColumns(10);
-		txtForFone.setBounds(130, 291, 170, 20);
+		txtForFone.setBounds(130, 306, 170, 20);
 		getContentPane().add(txtForFone);
 		
 		JLabel lblContato = new JLabel("Contato");
-		lblContato.setBounds(437, 232, 170, 14);
+		lblContato.setBounds(437, 256, 170, 14);
 		getContentPane().add(lblContato);
 		
 		txtForContato = new JTextField();
 		txtForContato.setBackground(SystemColor.menu);
 		txtForContato.setColumns(10);
-		txtForContato.setBounds(504, 229, 385, 20);
+		txtForContato.setBounds(504, 253, 385, 20);
 		getContentPane().add(txtForContato);
 		
 		JLabel lblEmail = new JLabel("E-mail");
-		lblEmail.setBounds(437, 260, 263, 14);
+		lblEmail.setBounds(437, 284, 263, 14);
 		getContentPane().add(lblEmail);
 		
 		txtForEmail = new JTextField();
 		txtForEmail.setBackground(SystemColor.menu);
 		txtForEmail.setColumns(10);
-		txtForEmail.setBounds(504, 257, 385, 20);
+		txtForEmail.setBounds(504, 281, 385, 20);
 		getContentPane().add(txtForEmail);
 		
 		JLabel lblCep = new JLabel("CEP");
-		lblCep.setBounds(282, 355, 175, 14);
+		lblCep.setBounds(312, 355, 175, 14);
 		getContentPane().add(lblCep);
 		
 		txtForCEP = new JTextField();
 		txtForCEP.setBackground(SystemColor.menu);
 		txtForCEP.setColumns(10);
-		txtForCEP.setBounds(354, 352, 153, 20);
+		txtForCEP.setBounds(384, 352, 153, 20);
 		getContentPane().add(txtForCEP);
 		
 		btnBuscarCep = new JButton("Buscar CEP");
@@ -247,67 +246,67 @@ public class Fornecedores extends JDialog {
 				}
 			}
 		});
-		btnBuscarCep.setBounds(532, 350, 140, 23);
+		btnBuscarCep.setBounds(562, 350, 140, 23);
 		getContentPane().add(btnBuscarCep);
 		
 		JLabel lblEndereco = new JLabel("Endere\u00E7o");
-		lblEndereco.setBounds(62, 391, 163, 14);
+		lblEndereco.setBounds(92, 391, 163, 14);
 		getContentPane().add(lblEndereco);
 		
 		txtForEndereco = new JTextField();
 		txtForEndereco.setBackground(SystemColor.menu);
 		txtForEndereco.setColumns(10);
-		txtForEndereco.setBounds(163, 388, 344, 20);
+		txtForEndereco.setBounds(193, 388, 344, 20);
 		getContentPane().add(txtForEndereco);
 		
 		JLabel lblNumero = new JLabel("N\u00FAmero");
-		lblNumero.setBounds(524, 385, 85, 14);
+		lblNumero.setBounds(554, 391, 85, 14);
 		getContentPane().add(lblNumero);
 		
 		txtForNumero = new JTextField();
 		txtForNumero.setBackground(SystemColor.menu);
 		txtForNumero.setColumns(10);
-		txtForNumero.setBounds(583, 382, 103, 20);
+		txtForNumero.setBounds(622, 388, 103, 20);
 		getContentPane().add(txtForNumero);
 		
 		JLabel lblComplemento = new JLabel("Complemento");
-		lblComplemento.setBounds(62, 419, 219, 14);
+		lblComplemento.setBounds(92, 419, 219, 14);
 		getContentPane().add(lblComplemento);
 		
 		txtForComplemento = new JTextField();
 		txtForComplemento.setBackground(SystemColor.menu);
 		txtForComplemento.setColumns(10);
-		txtForComplemento.setBounds(163, 416, 344, 20);
+		txtForComplemento.setBounds(193, 416, 344, 20);
 		getContentPane().add(txtForComplemento);
 		
 		JLabel lblBairro = new JLabel("Bairro");
-		lblBairro.setBounds(524, 413, 94, 14);
+		lblBairro.setBounds(554, 419, 94, 14);
 		getContentPane().add(lblBairro);
 		
 		txtForBairro = new JTextField();
 		txtForBairro.setBackground(SystemColor.menu);
 		txtForBairro.setColumns(10);
-		txtForBairro.setBounds(583, 410, 170, 20);
+		txtForBairro.setBounds(622, 416, 170, 20);
 		getContentPane().add(txtForBairro);
 		
 		JLabel lblCidade = new JLabel("Cidade");
-		lblCidade.setBounds(62, 447, 175, 14);
+		lblCidade.setBounds(92, 447, 175, 14);
 		getContentPane().add(lblCidade);
 		
 		txtForCidade = new JTextField();
 		txtForCidade.setBackground(SystemColor.menu);
 		txtForCidade.setColumns(10);
-		txtForCidade.setBounds(163, 444, 344, 20);
+		txtForCidade.setBounds(193, 444, 344, 20);
 		getContentPane().add(txtForCidade);
 		
 		JLabel lblUf = new JLabel("U.F");
-		lblUf.setBounds(524, 442, 64, 14);
+		lblUf.setBounds(554, 448, 64, 14);
 		getContentPane().add(lblUf);
 		
 		cboForUF = new JComboBox();
 		cboForUF.setBackground(SystemColor.menu);
 		cboForUF.setModel(new DefaultComboBoxModel(new String[] {"", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"}));
-		cboForUF.setBounds(583, 439, 57, 22);
+		cboForUF.setBounds(622, 445, 78, 22);
 		getContentPane().add(cboForUF);
 		
 		btnAdicionar = new JButton("");
@@ -358,7 +357,7 @@ public class Fornecedores extends JDialog {
 		btnAlterar.setBounds(437, 510, 64, 64);
 		getContentPane().add(btnAlterar);
 		
-		// Validaï¿½ï¿½o com o uso da biblioteca Atxy2k
+		// Validação com o uso da biblioteca Atxy2k
 		RestrictedTextField validarId = new RestrictedTextField(txtForID);
 		validarId.setOnlyNums(true);
 		validarId.setLimit(4);
@@ -404,12 +403,18 @@ public class Fornecedores extends JDialog {
 		lblNewLabel.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/CADEADO SS PRONTO.png")));
 		lblNewLabel.setBounds(611, 294, 354, 433);
 		getContentPane().add(lblNewLabel);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Fornecedor", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
+		panel.setBounds(20, 11, 895, 166);
+		getContentPane().add(panel);
 	}// Fim do construtor
 	
 	DAO dao = new DAO();
 	
 	/**
-	 * Mï¿½todo responsï¿½vel por buscar o CEP
+	 * Método responsável por buscar o CEP
 	 */
 	private void buscarCEP() {
 		String logradouro = "";
@@ -443,12 +448,12 @@ public class Fornecedores extends JDialog {
 		        	if (resultado.equals("1")) {
 		
 		        	} else {
-		        		JOptionPane.showMessageDialog(null, "CEP nï¿½o encontrado");
+		        		JOptionPane.showMessageDialog(null, "CEP não encontrado");
 		        	}
 		        }
 
 		    }
-			// Setar Campo Endereï¿½o
+			// Setar Campo Endereço
 			txtForEndereco.setText(tipoLogradouro + " " + logradouro);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -457,7 +462,7 @@ public class Fornecedores extends JDialog {
 	
 	
 	/**
-	 * Mï¿½todo responsï¿½vel pela pesquisa avanï¿½ada do Fornecedor
+	 * Método responsável pela pesquisa avançada do Fornecedor
 	 * usando o nome de fantasia e a biblioteca rs2xml
 	 */
 	private void pesquisarFornecedorTabela() {
@@ -475,7 +480,7 @@ public class Fornecedores extends JDialog {
 	}
 	
 	/**
-	 * Mï¿½todo responsï¿½vel por setar as caixas de texto
+	 * Método responsável por setar as caixas de texto
 	 * de acordo com os campos da tabela
 	 */
 	private void setarCaixasTexto() {
@@ -495,7 +500,7 @@ public class Fornecedores extends JDialog {
 	}
 	
 	/**
-	 * Mï¿½todo responsï¿½vel pela pesquisa de Fornecedores
+	 * Método responsável pela pesquisa de Fornecedores
 	 */
 	private void pesquisarFornecedor() {
 		if (txtForPesquisarFornecedor.getText().isEmpty()) {
@@ -530,7 +535,7 @@ public class Fornecedores extends JDialog {
 					btnExcluir.setEnabled(true);
 					btnBuscarCep.setEnabled(true);
 				} else {
-					JOptionPane.showMessageDialog(null, "Fornecedor nï¿½o cadastrado");
+					JOptionPane.showMessageDialog(null, "Fornecedor não cadastrado");
 					limparCamposFornecedor();
 					limparCampos();
 					btnBuscarCep.setEnabled(true);
@@ -549,7 +554,7 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CNPJ do Fornecedor");
 			txtForCNPJ.requestFocus();
 		}	else if (txtForRazao.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite a razï¿½o social do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite a razão social do fornecedor");
 			txtForRazao.requestFocus();
 		}	else if (txtForFantasia.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite a fantasia do fornecedor");
@@ -561,10 +566,10 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CEP do fornecedor");
 			txtForCEP.requestFocus();
 		}	else if (txtForEndereco.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o endereï¿½o do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o endereço do fornecedor");
 			txtForEndereco.requestFocus();
 		}	else if (txtForNumero.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o nï¿½mero do local do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o número do local do fornecedor");
 			txtForNumero.requestFocus();
 		}	else if (txtForBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite o bairro do fornecedor");
@@ -621,7 +626,7 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CNPJ do Fornecedor");
 			txtForCNPJ.requestFocus();
 		}	else if (txtForRazao.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite a razï¿½o social do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite a razão social do fornecedor");
 			txtForRazao.requestFocus();
 		}	else if (txtForFantasia.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite a fantasia do fornecedor");
@@ -633,10 +638,10 @@ public class Fornecedores extends JDialog {
 			JOptionPane.showMessageDialog(null, "Digite o CEP do fornecedor");
 			txtForCEP.requestFocus();
 		}	else if (txtForEndereco.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o endereï¿½o do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o endereço do fornecedor");
 			txtForEndereco.requestFocus();
 		}	else if (txtForNumero.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o nï¿½mero do local do fornecedor");
+			JOptionPane.showMessageDialog(null, "Digite o número do local do fornecedor");
 			txtForNumero.requestFocus();
 		}	else if (txtForBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Digite o bairro do fornecedor");
@@ -689,7 +694,7 @@ public class Fornecedores extends JDialog {
 	}
 	
 	private void excluirFornecedor() {
-		int confirma = JOptionPane.showConfirmDialog(null, "Deseja confirmar a exclusï¿½o do fornecedor ?","Atenï¿½ï¿½o!",JOptionPane.YES_NO_OPTION);
+		int confirma = JOptionPane.showConfirmDialog(null, "Deseja confirmar a exclusão do fornecedor ?","Atenção!",JOptionPane.YES_NO_OPTION);
 		if (confirma == JOptionPane.YES_OPTION) {
 			String delete = "delete from fornecedores where idfor=?";
 			try {
@@ -697,7 +702,7 @@ public class Fornecedores extends JDialog {
 				PreparedStatement pst = con.prepareStatement(delete);
 				pst.setString(1, txtForID.getText());
 				pst.executeUpdate();
-				JOptionPane.showMessageDialog(null, "Fornecedor excluï¿½do com sucesso!");
+				JOptionPane.showMessageDialog(null, "Fornecedor excluído com sucesso!");
 				limparCamposFornecedor();
 				limparCampos();
 				txtForPesquisarFornecedor.setText(null);
@@ -730,4 +735,4 @@ public class Fornecedores extends JDialog {
 		btnAlterar.setEnabled(false);
 		btnExcluir.setEnabled(false);
 	}
-}// Fim do cï¿½digo
+}// Fim do código

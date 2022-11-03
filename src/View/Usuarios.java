@@ -23,6 +23,10 @@ import javax.swing.border.EmptyBorder;
 
 import Atxy2k.CustomTextField.RestrictedTextField;
 import model.DAO;
+import java.awt.Color;
+import java.awt.SystemColor;
+import java.awt.Cursor;
+import java.awt.Toolkit;
 
 public class Usuarios extends JDialog {
 
@@ -49,51 +53,59 @@ public class Usuarios extends JDialog {
 	 * Create the dialog.
 	 */
 	public Usuarios() {
-		setBounds(100, 100, 462, 321);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Usuarios.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
+		setTitle("Usu\u00E1rio");
+		setBounds(100, 100, 647, 363);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(Color.WHITE);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
 		txtUsuId = new JTextField();
+		txtUsuId.setBackground(SystemColor.menu);
 		txtUsuId.setEditable(false);
-		txtUsuId.setBounds(80, 37, 71, 20);
+		txtUsuId.setBounds(143, 51, 85, 20);
 		contentPanel.add(txtUsuId);
 		txtUsuId.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("ID");
-		lblNewLabel.setBounds(24, 40, 46, 14);
+		lblNewLabel.setBounds(57, 54, 46, 14);
 		contentPanel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Usu\u00E1rio");
-		lblNewLabel_1.setBounds(24, 94, 46, 14);
+		JLabel lblNewLabel_1 = new JLabel("Nome");
+		lblNewLabel_1.setBounds(57, 134, 171, 14);
 		contentPanel.add(lblNewLabel_1);
 		
 		txtUsuNome = new JTextField();
-		txtUsuNome.setBounds(77, 91, 204, 20);
+		txtUsuNome.setBackground(SystemColor.menu);
+		txtUsuNome.setBounds(143, 134, 232, 20);
 		contentPanel.add(txtUsuNome);
 		txtUsuNome.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Login");
-		lblNewLabel_2.setBounds(24, 132, 46, 14);
+		lblNewLabel_2.setBounds(57, 94, 125, 14);
 		contentPanel.add(lblNewLabel_2);
 		
 		txtUsuLogin = new JTextField();
-		txtUsuLogin.setBounds(80, 129, 115, 20);
+		txtUsuLogin.setBackground(SystemColor.menu);
+		txtUsuLogin.setBounds(143, 94, 232, 20);
 		contentPanel.add(txtUsuLogin);
 		txtUsuLogin.setColumns(10);
 		
 		JLabel txtUsu = new JLabel("Senha");
-		txtUsu.setBounds(24, 175, 46, 14);
+		txtUsu.setBounds(57, 178, 125, 14);
 		contentPanel.add(txtUsu);
 		
 		JLabel lblNewLabel_5 = new JLabel("Perfil");
-		lblNewLabel_5.setBounds(266, 132, 46, 14);
+		lblNewLabel_5.setBounds(417, 137, 90, 14);
 		contentPanel.add(lblNewLabel_5);
 		
 		cboUsuPerfil_1 = new JComboBox();
+		cboUsuPerfil_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cboUsuPerfil_1.setBackground(SystemColor.menu);
 		cboUsuPerfil_1.setModel(new DefaultComboBoxModel(new String[] {"", "admin", "user"}));
-		cboUsuPerfil_1.setBounds(323, 128, 70, 22);
+		cboUsuPerfil_1.setBounds(474, 134, 94, 22);
 		contentPanel.add(cboUsuPerfil_1);
 		
 		btnAdicionar = new JButton("");
@@ -109,8 +121,8 @@ public class Usuarios extends JDialog {
 		});
 		btnAdicionar.setBorderPainted(false);
 		btnAdicionar.setFocusTraversalKeysEnabled(false);
-		btnAdicionar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/create.png")));
-		btnAdicionar.setBounds(71, 203, 64, 64);
+		btnAdicionar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconadd64.png")));
+		btnAdicionar.setBounds(187, 221, 64, 64);
 		contentPanel.add(btnAdicionar);
 		
 		btnAlterar = new JButton("");
@@ -125,8 +137,8 @@ public class Usuarios extends JDialog {
 		});
 		btnAlterar.setEnabled(false);
 		btnAlterar.setBorderPainted(false);
-		btnAlterar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/update.png")));
-		btnAlterar.setBounds(160, 203, 64, 64);
+		btnAlterar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconupload64.png")));
+		btnAlterar.setBounds(276, 221, 64, 64);
 		contentPanel.add(btnAlterar);
 		
 		btnExcluir = new JButton("");
@@ -139,24 +151,25 @@ public class Usuarios extends JDialog {
 		});
 		btnExcluir.setEnabled(false);
 		btnExcluir.setBorderPainted(false);
-		btnExcluir.setIcon(new ImageIcon(Usuarios.class.getResource("/img/excluir.png")));
-		btnExcluir.setBounds(249, 203, 64, 64);
+		btnExcluir.setIcon(new ImageIcon(Usuarios.class.getResource("/img/icondelete64.png")));
+		btnExcluir.setBounds(365, 221, 64, 64);
 		contentPanel.add(btnExcluir);
 		
 		txtUsuSenha = new JPasswordField();
-		txtUsuSenha.setBounds(80, 172, 201, 20);
+		txtUsuSenha.setBackground(SystemColor.menu);
+		txtUsuSenha.setBounds(143, 175, 232, 20);
 		contentPanel.add(txtUsuSenha);
 		
-		btnBuscar = new JButton("");
+		btnBuscar = new JButton("Buscar Usu\u00E1rio");
+		btnBuscar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnBuscar.setContentAreaFilled(false);
+		btnBuscar.setBackground(SystemColor.menu);
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pesquisarUsuario();
 			}
 		});
-		btnBuscar.setBorderPainted(false);
-		btnBuscar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/lupa.png")));
-		btnBuscar.setBounds(205, 122, 32, 32);
+		btnBuscar.setBounds(416, 92, 152, 24);
 		contentPanel.add(btnBuscar);
 		
 		RestrictedTextField validarId = new RestrictedTextField(txtUsuId);
@@ -171,6 +184,8 @@ public class Usuarios extends JDialog {
 				RestrictedTextField validarSenha = new RestrictedTextField(txtUsuSenha);
 				
 				chkSenha_1 = new JCheckBox("Alterar senha");
+				chkSenha_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				chkSenha_1.setBackground(Color.WHITE);
 				chkSenha_1.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						txtUsuSenha.setText(null);
@@ -185,8 +200,14 @@ public class Usuarios extends JDialog {
 			}
 		});
 		chkSenha_1.setVisible(false);
-		chkSenha_1.setBounds(300, 171, 125, 23);
+		chkSenha_1.setBounds(412, 175, 125, 23);
 		contentPanel.add(chkSenha_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setEnabled(false);
+		lblNewLabel_3.setIcon(new ImageIcon(Usuarios.class.getResource("/img/CADEADO SS PRONTO.png")));
+		lblNewLabel_3.setBounds(328, 119, 317, 353);
+		contentPanel.add(lblNewLabel_3);
 
 		validarSenha.setLimit(255);
 		
@@ -205,7 +226,7 @@ public class Usuarios extends JDialog {
 	
 
 	/**
-	 * Metodo responsavel pela pesquisa de usuario
+	 * Método responsável pela pesquisa de usuario
 	 */
 
 	private void pesquisarUsuario() {

@@ -38,6 +38,13 @@ import java.awt.event.MouseEvent;
 import java.net.URL;
 import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JDateChooser;
+import java.awt.Color;
+import java.awt.SystemColor;
+import java.awt.Cursor;
+import java.awt.Toolkit;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EtchedBorder;
 
 public class Clientes extends JDialog {
 	private JTextField txtPesquisarClientes;
@@ -70,11 +77,14 @@ public class Clientes extends JDialog {
 	 * Create the dialog.
 	 */
 	public Clientes() {
-		setTitle("Cliente");
-		setBounds(100, 100, 839, 462);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
+		getContentPane().setBackground(Color.WHITE);
+		setTitle("Clientes");
+		setBounds(100, 100, 952, 660);
 		getContentPane().setLayout(null);
 		
 		txtPesquisarClientes = new JTextField();
+		txtPesquisarClientes.setBackground(SystemColor.menu);
 		txtPesquisarClientes.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
@@ -82,36 +92,36 @@ public class Clientes extends JDialog {
 			}
 		});
 		txtPesquisarClientes.setColumns(10);
-		txtPesquisarClientes.setBounds(90, 25, 262, 20);
+		txtPesquisarClientes.setBounds(40, 43, 568, 20);
 		getContentPane().add(txtPesquisarClientes);
 		
-		JLabel lblNewLabel_14 = new JLabel("Cliente");
-		lblNewLabel_14.setBounds(40, 28, 46, 14);
-		getContentPane().add(lblNewLabel_14);
-		
-		btnPesquisar = new JButton("buscar");
+		btnPesquisar = new JButton("Buscar");
+		btnPesquisar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnPesquisar.setContentAreaFilled(false);
+		btnPesquisar.setBackground(SystemColor.menu);
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pesquisarClientes();
 			}
 		});
 		btnPesquisar.setToolTipText("Buscar");
-		btnPesquisar.setBounds(371, 24, 89, 23);
+		btnPesquisar.setBounds(640, 42, 106, 23);
 		getContentPane().add(btnPesquisar);
 		
 		JLabel lblNewLabel = new JLabel("ID");
-		lblNewLabel.setBounds(573, 28, 46, 14);
+		lblNewLabel.setBounds(781, 46, 66, 14);
 		getContentPane().add(lblNewLabel);
 		
 		txtCliId = new JTextField();
 		txtCliId.setEnabled(false);
 		txtCliId.setEditable(false);
 		txtCliId.setColumns(10);
-		txtCliId.setBounds(599, 25, 86, 20);
+		txtCliId.setBounds(824, 43, 79, 20);
 		getContentPane().add(txtCliId);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(40, 58, 744, 74);
+		scrollPane.setBackground(Color.WHITE);
+		scrollPane.setBounds(40, 76, 863, 93);
 		getContentPane().add(scrollPane);
 		
 		tblClientes = new JTable();
@@ -124,125 +134,142 @@ public class Clientes extends JDialog {
 		scrollPane.setViewportView(tblClientes);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome");
-		lblNewLabel_1.setBounds(40, 143, 46, 14);
+		lblNewLabel_1.setBounds(40, 210, 196, 14);
 		getContentPane().add(lblNewLabel_1);
 		
 		txtCliNome = new JTextField();
+		txtCliNome.setBackground(SystemColor.menu);
 		txtCliNome.setColumns(10);
-		txtCliNome.setBounds(77, 140, 275, 20);
+		txtCliNome.setBounds(132, 207, 349, 20);
 		getContentPane().add(txtCliNome);
 		
-		JLabel lblNewLabel_2 = new JLabel("Data de nascimento");
-		lblNewLabel_2.setBounds(373, 143, 165, 14);
+		JLabel lblNewLabel_2 = new JLabel("Nascimento");
+		lblNewLabel_2.setBackground(SystemColor.menu);
+		lblNewLabel_2.setBounds(39, 243, 165, 14);
 		getContentPane().add(lblNewLabel_2);
 		
 		txtCliFone = new JTextField();
+		txtCliFone.setBackground(SystemColor.menu);
 		txtCliFone.setColumns(10);
-		txtCliFone.setBounds(657, 140, 127, 20);
+		txtCliFone.setBounds(132, 275, 196, 20);
 		getContentPane().add(txtCliFone);
 		
 		JLabel lblNewLabel_3 = new JLabel("Fone");
-		lblNewLabel_3.setBounds(625, 143, 46, 14);
+		lblNewLabel_3.setBounds(40, 278, 147, 14);
 		getContentPane().add(lblNewLabel_3);
 		
 		txtCliCPF = new JTextField();
+		txtCliCPF.setBackground(SystemColor.menu);
 		txtCliCPF.setColumns(10);
-		txtCliCPF.setBounds(66, 180, 165, 20);
+		txtCliCPF.setBounds(587, 208, 165, 20);
 		getContentPane().add(txtCliCPF);
 		
 		JLabel lblNewLabel_4 = new JLabel("CPF");
-		lblNewLabel_4.setBounds(40, 183, 46, 14);
+		lblNewLabel_4.setBounds(504, 211, 131, 14);
 		getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("E-mail");
-		lblNewLabel_5.setBounds(252, 183, 46, 14);
+		lblNewLabel_5.setBounds(504, 243, 115, 14);
 		getContentPane().add(lblNewLabel_5);
 		
 		txtCliEmail = new JTextField();
+		txtCliEmail.setBackground(SystemColor.menu);
 		txtCliEmail.setColumns(10);
-		txtCliEmail.setBounds(292, 180, 358, 20);
+		txtCliEmail.setBounds(587, 240, 316, 20);
 		getContentPane().add(txtCliEmail);
 		
 		JLabel lblNewLabel_6 = new JLabel("Marketing");
-		lblNewLabel_6.setBounds(672, 183, 94, 14);
+		lblNewLabel_6.setBounds(504, 279, 115, 14);
 		getContentPane().add(lblNewLabel_6);
 		
 		cboCliMkt = new JComboBox();
+		cboCliMkt.setBackground(SystemColor.menu);
 		cboCliMkt.setModel(new DefaultComboBoxModel(new String[] {"", "SIM", "N\u00C3O"}));
-		cboCliMkt.setBounds(733, 179, 51, 22);
+		cboCliMkt.setBounds(587, 274, 89, 22);
 		getContentPane().add(cboCliMkt);
 		
 		txtCliCEP = new JTextField();
+		txtCliCEP.setBackground(SystemColor.menu);
 		txtCliCEP.setColumns(10);
-		txtCliCEP.setBounds(66, 220, 99, 20);
+		txtCliCEP.setBounds(344, 338, 125, 20);
 		getContentPane().add(txtCliCEP);
 		
 		JLabel lblNewLabel_7 = new JLabel("CEP");
-		lblNewLabel_7.setBounds(40, 223, 46, 14);
+		lblNewLabel_7.setBounds(294, 341, 147, 14);
 		getContentPane().add(lblNewLabel_7);
 		
 		btnCliBuscarCep = new JButton("Buscar CEP");
+		btnCliBuscarCep.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnCliBuscarCep.setContentAreaFilled(false);
+		btnCliBuscarCep.setBackground(SystemColor.menu);
 		btnCliBuscarCep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buscarCEP();
 			}
 		});
 		btnCliBuscarCep.setToolTipText("Buscar CEP");
-		btnCliBuscarCep.setBounds(175, 219, 123, 23);
+		btnCliBuscarCep.setBounds(493, 337, 123, 23);
 		getContentPane().add(btnCliBuscarCep);
 		
 		JLabel lblNewLabel_8 = new JLabel("Endere\u00E7o");
-		lblNewLabel_8.setBounds(318, 223, 66, 14);
+		lblNewLabel_8.setBounds(98, 377, 125, 14);
 		getContentPane().add(lblNewLabel_8);
 		
 		txtCliEndereco = new JTextField();
+		txtCliEndereco.setBackground(SystemColor.menu);
 		txtCliEndereco.setColumns(10);
-		txtCliEndereco.setBounds(376, 220, 408, 20);
+		txtCliEndereco.setBounds(200, 374, 269, 20);
 		getContentPane().add(txtCliEndereco);
 		
 		txtCliNumero = new JTextField();
+		txtCliNumero.setBackground(SystemColor.menu);
 		txtCliNumero.setColumns(10);
-		txtCliNumero.setBounds(90, 259, 75, 20);
+		txtCliNumero.setBounds(561, 374, 115, 20);
 		getContentPane().add(txtCliNumero);
 		
 		JLabel lblNewLabel_9 = new JLabel("N\u00FAmero");
-		lblNewLabel_9.setBounds(40, 262, 46, 14);
+		lblNewLabel_9.setBounds(493, 377, 115, 14);
 		getContentPane().add(lblNewLabel_9);
 		
 		JLabel lblNewLabel_10 = new JLabel("Complemento");
-		lblNewLabel_10.setBounds(185, 262, 94, 14);
+		lblNewLabel_10.setBounds(98, 419, 154, 14);
 		getContentPane().add(lblNewLabel_10);
 		
 		txtCliComplemento = new JTextField();
+		txtCliComplemento.setBackground(SystemColor.menu);
 		txtCliComplemento.setColumns(10);
-		txtCliComplemento.setBounds(272, 259, 188, 20);
+		txtCliComplemento.setBounds(200, 416, 269, 20);
 		getContentPane().add(txtCliComplemento);
 		
 		txtCliBairro = new JTextField();
+		txtCliBairro.setBackground(SystemColor.menu);
 		txtCliBairro.setColumns(10);
-		txtCliBairro.setBounds(515, 259, 269, 20);
+		txtCliBairro.setBounds(561, 416, 269, 20);
 		getContentPane().add(txtCliBairro);
 		
 		JLabel lblNewLabel_11 = new JLabel("Bairro");
-		lblNewLabel_11.setBounds(477, 262, 46, 14);
+		lblNewLabel_11.setBounds(493, 416, 104, 14);
 		getContentPane().add(lblNewLabel_11);
 		
 		txtCliCidade = new JTextField();
+		txtCliCidade.setBackground(SystemColor.menu);
 		txtCliCidade.setColumns(10);
-		txtCliCidade.setBounds(84, 304, 358, 20);
+		txtCliCidade.setBounds(200, 456, 269, 20);
 		getContentPane().add(txtCliCidade);
 		
 		JLabel lblNewLabel_12 = new JLabel("Cidade");
-		lblNewLabel_12.setBounds(40, 307, 46, 14);
+		lblNewLabel_12.setBounds(98, 459, 275, 14);
 		getContentPane().add(lblNewLabel_12);
 		
-		JLabel lblNewLabel_13 = new JLabel("UF");
-		lblNewLabel_13.setBounds(462, 307, 46, 14);
+		JLabel lblNewLabel_13 = new JLabel("U.F");
+		lblNewLabel_13.setBounds(493, 459, 79, 14);
 		getContentPane().add(lblNewLabel_13);
 		
 		cboCliUF = new JComboBox();
+		cboCliUF.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cboCliUF.setBackground(SystemColor.menu);
 		cboCliUF.setModel(new DefaultComboBoxModel(new String[] {"", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"}));
-		cboCliUF.setBounds(501, 303, 56, 22);
+		cboCliUF.setBounds(561, 455, 74, 22);
 		getContentPane().add(cboCliUF);
 		
 		btnCliAdicionar = new JButton("");
@@ -251,12 +278,12 @@ public class Clientes extends JDialog {
 				adicionarClientes();
 			}
 		});
-		btnCliAdicionar.setIcon(new ImageIcon(Clientes.class.getResource("/img/create.png")));
+		btnCliAdicionar.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconadd64.png")));
 		btnCliAdicionar.setToolTipText("Adicionar");
 		btnCliAdicionar.setEnabled(false);
 		btnCliAdicionar.setContentAreaFilled(false);
 		btnCliAdicionar.setBorderPainted(false);
-		btnCliAdicionar.setBounds(292, 337, 64, 64);
+		btnCliAdicionar.setBounds(306, 514, 64, 64);
 		getContentPane().add(btnCliAdicionar);
 		
 		btnCliAlterar = new JButton("");
@@ -265,12 +292,12 @@ public class Clientes extends JDialog {
 				alterarCliente();
 			}
 		});
-		btnCliAlterar.setIcon(new ImageIcon(Clientes.class.getResource("/img/update.png")));
+		btnCliAlterar.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconupload64.png")));
 		btnCliAlterar.setToolTipText("Alterar");
 		btnCliAlterar.setEnabled(false);
 		btnCliAlterar.setContentAreaFilled(false);
 		btnCliAlterar.setBorderPainted(false);
-		btnCliAlterar.setBounds(360, 337, 64, 64);
+		btnCliAlterar.setBounds(420, 514, 64, 64);
 		getContentPane().add(btnCliAlterar);
 		
 		btnCliExcluir = new JButton("");
@@ -279,12 +306,12 @@ public class Clientes extends JDialog {
 				excluirCliente();
 			}
 		});
-		btnCliExcluir.setIcon(new ImageIcon(Clientes.class.getResource("/img/excluir.png")));
+		btnCliExcluir.setIcon(new ImageIcon(Clientes.class.getResource("/img/icondelete64.png")));
 		btnCliExcluir.setToolTipText("Excluir");
 		btnCliExcluir.setEnabled(false);
 		btnCliExcluir.setContentAreaFilled(false);
 		btnCliExcluir.setBorderPainted(false);
-		btnCliExcluir.setBounds(434, 337, 64, 64);
+		btnCliExcluir.setBounds(533, 514, 64, 64);
 		getContentPane().add(btnCliExcluir);
 		
 		// Validação com o uso da biblioteca Atxy2k
@@ -326,8 +353,23 @@ public class Clientes extends JDialog {
 		getRootPane().setDefaultButton(btnPesquisar);
 		
 		txtCliNascimento = new JDateChooser();
-		txtCliNascimento.setBounds(485, 143, 108, 20);
+		txtCliNascimento.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+		txtCliNascimento.getCalendarButton().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		txtCliNascimento.setBackground(SystemColor.menu);
+		txtCliNascimento.setBounds(133, 239, 195, 20);
 		getContentPane().add(txtCliNascimento);
+		
+		JLabel lblNewLabel_15 = new JLabel("");
+		lblNewLabel_15.setEnabled(false);
+		lblNewLabel_15.setIcon(new ImageIcon(Clientes.class.getResource("/img/CADEADO SS PRONTO.png")));
+		lblNewLabel_15.setBounds(601, 326, 369, 363);
+		getContentPane().add(lblNewLabel_15);
+		
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(23, 17, 898, 175);
+		getContentPane().add(panel);
 		
 	} // Fim do construtor
 	
@@ -342,6 +384,7 @@ public class Clientes extends JDialog {
 	private JButton btnPesquisar;
 	private JButton btnCliBuscarCep;
 	private JDateChooser txtCliNascimento;
+	private JPanel panel;
 	
 	/**
 	 * Método responsável pela pesquisa avançada do cliente usando o nome e a
