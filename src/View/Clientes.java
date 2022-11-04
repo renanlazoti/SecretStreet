@@ -278,7 +278,7 @@ public class Clientes extends JDialog {
 				adicionarClientes();
 			}
 		});
-		btnCliAdicionar.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconadd64.png")));
+		btnCliAdicionar.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconcliadd64.png")));
 		btnCliAdicionar.setToolTipText("Adicionar");
 		btnCliAdicionar.setEnabled(false);
 		btnCliAdicionar.setContentAreaFilled(false);
@@ -292,7 +292,7 @@ public class Clientes extends JDialog {
 				alterarCliente();
 			}
 		});
-		btnCliAlterar.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconupload64.png")));
+		btnCliAlterar.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconclireload64.png")));
 		btnCliAlterar.setToolTipText("Alterar");
 		btnCliAlterar.setEnabled(false);
 		btnCliAlterar.setContentAreaFilled(false);
@@ -306,7 +306,7 @@ public class Clientes extends JDialog {
 				excluirCliente();
 			}
 		});
-		btnCliExcluir.setIcon(new ImageIcon(Clientes.class.getResource("/img/icondelete64.png")));
+		btnCliExcluir.setIcon(new ImageIcon(Clientes.class.getResource("/img/iconclidelete64.png")));
 		btnCliExcluir.setToolTipText("Excluir");
 		btnCliExcluir.setEnabled(false);
 		btnCliExcluir.setContentAreaFilled(false);

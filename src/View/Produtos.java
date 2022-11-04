@@ -41,6 +41,8 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.UIManager;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Produtos extends JDialog {
 
@@ -82,6 +84,12 @@ public class Produtos extends JDialog {
 	 * Create the dialog.
 	 */
 	public Produtos() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent e) {
+				txtBarCode.requestFocus();
+			}
+		});
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Produtos.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
 		setTitle("Produtos");
 		setBounds(100, 100, 952, 656);
@@ -545,20 +553,21 @@ public class Produtos extends JDialog {
 				ResultSet rs = pst.executeQuery();
 				limparCampos();
 				if (rs.next()) {
-					txtBarCode.setText(rs.getString(2));
-					txtProduto.setText(rs.getString(3));
-					txtAreaDesc.setText(rs.getString(4));
-					cboTamanho.setSelectedItem(rs.getString(5));
-					cboCor.setSelectedItem(rs.getString(6));
-					txtQuantidade.setText(rs.getString(7));
-					txtFabricante.setText(rs.getString(8));
-					String setarDataCad = rs.getString(9);
-					txtEstoque.setText(rs.getString(10));
-					txtEstoqueMin.setText(rs.getString(11));
-					txtCusto.setText(rs.getString(12));
-					txtLucro.setText(rs.getString(13));
-					txtVenda.setText(rs.getString(14));					
-					txtIdFor.setText(rs.getString(15));		
+					txtIdProd.setText(rs.getString(2));
+					txtBarCode.setText(rs.getString(3));
+					txtProduto.setText(rs.getString(4));
+					txtAreaDesc.setText(rs.getString(5));
+					cboTamanho.setSelectedItem(rs.getString(6));
+					cboCor.setSelectedItem(rs.getString(7));
+					txtQuantidade.setText(rs.getString(8));
+					txtFabricante.setText(rs.getString(9));
+					String setarDataCad = rs.getString(10);
+					txtEstoque.setText(rs.getString(11));
+					txtEstoqueMin.setText(rs.getString(12));
+					txtCusto.setText(rs.getString(13));
+					txtLucro.setText(rs.getString(14));
+					txtVenda.setText(rs.getString(15));					
+					txtIdFor.setText(rs.getString(16));		
 					Date dataVal = new SimpleDateFormat("yyyy-MM-dd").parse(setarDataCad);
 					dataEntrada.setDate(dataVal);
 					btnAtualizarProd.setEnabled(true);
@@ -587,20 +596,21 @@ public class Produtos extends JDialog {
 				ResultSet rs = pst.executeQuery();
 				limparCamposCodigo();
 				if (rs.next()) {
-					txtIdProd.setText(rs.getString(1));
-					txtBarCode.setText(rs.getString(2));
-					txtProduto.setText(rs.getString(3));
-					txtAreaDesc.setText(rs.getString(4));
-					cboTamanho.setSelectedItem(rs.getString(5));
-					cboCor.setSelectedItem(rs.getString(6));
-					txtFabricante.setText(rs.getString(7));
-					txtEstoque.setText(rs.getString(9));
-					txtEstoqueMin.setText(rs.getString(10));
-					txtCusto.setText(rs.getString(11));
-					txtLucro.setText(rs.getString(12));
-					txtVenda.setText(rs.getString(13));		
-					txtQuantidade.setText(rs.getString(14));
-					String setarDataCad = rs.getString(8);				
+					txtIdProd.setText(rs.getString(2));
+					txtBarCode.setText(rs.getString(3));
+					txtProduto.setText(rs.getString(4));
+					txtAreaDesc.setText(rs.getString(5));
+					cboTamanho.setSelectedItem(rs.getString(6));
+					cboCor.setSelectedItem(rs.getString(7));
+					txtQuantidade.setText(rs.getString(8));
+					txtFabricante.setText(rs.getString(9));
+					String setarDataCad = rs.getString(10);
+					txtEstoque.setText(rs.getString(11));
+					txtEstoqueMin.setText(rs.getString(12));
+					txtCusto.setText(rs.getString(13));
+					txtLucro.setText(rs.getString(14));
+					txtVenda.setText(rs.getString(15));					
+					txtIdFor.setText(rs.getString(16));				
 					Date dataVal = new SimpleDateFormat("yyyy-MM-dd").parse(setarDataCad);
 					dataEntrada.setDate(dataVal);
 					btnAtualizarProd.setEnabled(true);
@@ -618,7 +628,7 @@ public class Produtos extends JDialog {
 		}
 		
 		/**
-		 * Mï¿½todo responsï¿½vel por criar um produto no banco
+		 * Método responsável por criar um produto no banco
 		 */
 				
 		private void adicionarProduto() {	
@@ -657,7 +667,7 @@ public class Produtos extends JDialog {
 				txtIdFor.requestFocus();
 			}else {
 
-				String create = "insert into produtos(barcode,produto,descricao,tamanho,cor,quantidade,fabricante,estoque,estoquemin,custo,lucro,idfor) values (?,?,?,?,?,?,?,?,?,?,?,?)";
+				String create = "insert into produtos(barcode,produto,descricao,tamanho,cor,quantidade,fabricante,estoque,estoquemin,custo,lucro,venda,idfor) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				try {				
 					Connection con = dao.conectar();			
 					PreparedStatement pst = con.prepareStatement(create);				
@@ -671,8 +681,9 @@ public class Produtos extends JDialog {
 					pst.setString(8, txtEstoque.getText());
 					pst.setString(9, txtEstoqueMin.getText());	
 					pst.setString(10, txtCusto.getText());
-					pst.setString(11, txtLucro.getText());			
-					pst.setString(12, txtIdFor.getText());		
+					pst.setString(11, txtLucro.getText());
+					pst.setString(12, txtVenda.getText());
+					pst.setString(13, txtIdFor.getText());		
 					pst.executeUpdate();			
 					limparCampos();
 					LimparCamposFornecedor();
@@ -681,7 +692,6 @@ public class Produtos extends JDialog {
 					txtIdProd.setText(null);
 					JOptionPane.showMessageDialog(null, "Produto Cadastrado com Sucesso!");
 					con.close();
-					
 				} catch (SQLIntegrityConstraintViolationException ex) {
 					JOptionPane.showMessageDialog(null, "BarCode exixtente.\nDigite outro");
 					txtBarCode.setText(null);
@@ -731,7 +741,7 @@ public class Produtos extends JDialog {
 				txtLucro.requestFocus();
 			} else {
 
-				String update = "update produtos set barcode=?,produto=?,descricao=?,tamanho=?,cor=?,quantidade=?,fabricante=?,datacad=?,estoque=?,estoquemin=?,custo=?,lucro=?,idfor=? where idprod=?";
+				String update = "update produtos set barcode=?,produto=?,descricao=?,tamanho=?,cor=?,quantidade=?,fabricante=?,datacad=?,estoque=?,estoquemin=?,custo=?,lucro=?,venda=?,idfor=? where idprod=?";
 				try {		
 					Connection con = dao.conectar();		
 					PreparedStatement pst = con.prepareStatement(update);		
@@ -748,15 +758,15 @@ public class Produtos extends JDialog {
 					pst.setString(9, txtEstoque.getText());
 					pst.setString(10, txtEstoqueMin.getText());	
 					pst.setString(11, txtCusto.getText());
-					pst.setString(12, txtLucro.getText());			
-					pst.setString(13, txtIdFor.getText());					
-					pst.setString(14, txtIdProd.getText());	
+					pst.setString(12, txtLucro.getText());	
+					pst.setString(13, txtVenda.getText());	
+					pst.setString(14, txtIdFor.getText());					
+					pst.setString(15, txtIdProd.getText());	
 					pst.executeUpdate();	
 					limparCampos();
 					LimparCamposFornecedor();
 					LimparCamposProdutos();
 					txtPesquisarProd.setText(null);
-					txtIdProd.setText(null);
 					JOptionPane.showMessageDialog(null, "Produto Alterado com Sucesso!");
 					con.close();
 				} catch (SQLIntegrityConstraintViolationException ex) {
@@ -835,7 +845,6 @@ public class Produtos extends JDialog {
 		 * Método responsável por limpar os campos da tela produtos barcode
 		 */
 		private void limparCamposCodigo() {
-			txtBarCode.setText(null);
 			txtProduto.setText(null);
 			cboTamanho.setSelectedItem("");
 			cboCor.setSelectedItem("");

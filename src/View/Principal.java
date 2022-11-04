@@ -172,7 +172,7 @@ public class Principal extends JFrame {
 		lblUsuario = new JLabel("New label");
 		lblUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(56, 22, 138, 14);
+		lblUsuario.setBounds(56, 22, 268, 14);
 		panelUsuario.add(lblUsuario);
 		
 		lblPerfil = new JLabel("New label");

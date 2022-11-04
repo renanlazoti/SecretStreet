@@ -55,7 +55,7 @@ public class Usuarios extends JDialog {
 	public Usuarios() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Usuarios.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
 		setTitle("Usu\u00E1rio");
-		setBounds(100, 100, 647, 363);
+		setBounds(100, 100, 647, 365);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.WHITE);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -121,7 +121,7 @@ public class Usuarios extends JDialog {
 		});
 		btnAdicionar.setBorderPainted(false);
 		btnAdicionar.setFocusTraversalKeysEnabled(false);
-		btnAdicionar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconadd64.png")));
+		btnAdicionar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconuseradd64.png")));
 		btnAdicionar.setBounds(187, 221, 64, 64);
 		contentPanel.add(btnAdicionar);
 		
@@ -137,7 +137,7 @@ public class Usuarios extends JDialog {
 		});
 		btnAlterar.setEnabled(false);
 		btnAlterar.setBorderPainted(false);
-		btnAlterar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconupload64.png")));
+		btnAlterar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconuserreload64.png")));
 		btnAlterar.setBounds(276, 221, 64, 64);
 		contentPanel.add(btnAlterar);
 		
@@ -151,7 +151,7 @@ public class Usuarios extends JDialog {
 		});
 		btnExcluir.setEnabled(false);
 		btnExcluir.setBorderPainted(false);
-		btnExcluir.setIcon(new ImageIcon(Usuarios.class.getResource("/img/icondelete64.png")));
+		btnExcluir.setIcon(new ImageIcon(Usuarios.class.getResource("/img/iconuserdelete64.png")));
 		btnExcluir.setBounds(365, 221, 64, 64);
 		contentPanel.add(btnExcluir);
 		

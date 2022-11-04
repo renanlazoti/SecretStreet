@@ -22,6 +22,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
+import java.awt.SystemColor;
+import java.awt.Cursor;
 
 public class Login extends JFrame {
 
@@ -48,6 +51,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
 		setTitle("Login");
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -56,50 +60,62 @@ public class Login extends JFrame {
 			}
 		});
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 432, 300);
+		setBounds(100, 100, 647, 365);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Login");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblNewLabel.setBounds(190, 43, 55, 28);
+		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 15));
+		lblNewLabel.setBounds(321, 79, 113, 28);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Usuario");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1.setBounds(100, 110, 46, 14);
+		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(166, 128, 127, 14);
 		contentPane.add(lblNewLabel_1);
 
 		JLabel lblNewLabel_1_1 = new JLabel("Senha");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1_1.setBounds(100, 149, 46, 14);
+		lblNewLabel_1_1.setFont(new Font("Arial", Font.BOLD, 12));
+		lblNewLabel_1_1.setBounds(166, 167, 117, 14);
 		contentPane.add(lblNewLabel_1_1);
 
 		txtLogin = new JTextField();
-		txtLogin.setBounds(156, 107, 117, 20);
+		txtLogin.setBackground(SystemColor.menu);
+		txtLogin.setBounds(260, 125, 183, 20);
 		contentPane.add(txtLogin);
 		txtLogin.setColumns(10);
 
 		lblStatus = new JLabel("");
 		lblStatus.setIcon(new ImageIcon(Login.class.getResource("/img/databaseoff.png")));
-		lblStatus.setBounds(342, 182, 64, 64);
+		lblStatus.setBounds(34, 231, 64, 64);
 		contentPane.add(lblStatus);
 
 		btnEntrar = new JButton("Entrar");
+		btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnEntrar.setContentAreaFilled(false);
+		btnEntrar.setBackground(SystemColor.menu);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				logar();
 			}
 		});
 		btnEntrar.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnEntrar.setBounds(171, 178, 89, 23);
+		btnEntrar.setBounds(261, 208, 182, 23);
 		contentPane.add(btnEntrar);
 		
 		txtSenha = new JPasswordField();
-		txtSenha.setBounds(156, 146, 117, 20);
+		txtSenha.setBackground(SystemColor.menu);
+		txtSenha.setBounds(260, 164, 183, 20);
 		contentPane.add(txtSenha);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setEnabled(false);
+		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/img/CADEADO SS PRONTO.png")));
+		lblNewLabel_2.setBounds(324, 115, 372, 362);
+		contentPane.add(lblNewLabel_2);
 	} // fim do construtor
 
 	DAO dao = new DAO();

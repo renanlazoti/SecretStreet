@@ -316,7 +316,7 @@ public class Fornecedores extends JDialog {
 				adicionarFornecedor();
 			}
 		});
-		btnAdicionar.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/iconadd64.png")));
+		btnAdicionar.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/iconforneadd64.png")));
 		btnAdicionar.setToolTipText("Adicionar Fornecedor");
 		btnAdicionar.setEnabled(false);
 		btnAdicionar.setDefaultCapable(false);
@@ -332,7 +332,7 @@ public class Fornecedores extends JDialog {
 				excluirFornecedor();
 			}
 		});
-		btnExcluir.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/icondelete64.png")));
+		btnExcluir.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/iconfornedelete64.png")));
 		btnExcluir.setToolTipText("Remover Fornecedor");
 		btnExcluir.setEnabled(false);
 		btnExcluir.setDefaultCapable(false);
@@ -348,7 +348,7 @@ public class Fornecedores extends JDialog {
 				alterarFornecedor();
 			}
 		});
-		btnAlterar.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/iconupload64.png")));
+		btnAlterar.setIcon(new ImageIcon(Fornecedores.class.getResource("/img/iconfornereload64.png")));
 		btnAlterar.setToolTipText("Alterar Fornecedor");
 		btnAlterar.setEnabled(false);
 		btnAlterar.setDefaultCapable(false);
