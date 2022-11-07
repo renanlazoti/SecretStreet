@@ -107,7 +107,7 @@ public class Principal extends JFrame {
 		btnFornecedores = new JButton("");
 		btnFornecedores.setBorderPainted(false);
 		btnFornecedores.setContentAreaFilled(false);
-		btnFornecedores.setIcon(new ImageIcon(Principal.class.getResource("/img/iconforne novo png.png")));
+		btnFornecedores.setIcon(new ImageIcon(Principal.class.getResource("/img/iconforne4 NOVO.png")));
 		btnFornecedores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Fornecedores fornecedores = new Fornecedores();

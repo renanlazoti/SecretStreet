@@ -302,7 +302,7 @@ public class Usuarios extends JDialog {
 			txtUsuSenha.requestFocus();
 		} else {
 			// lógica principal
-			String create = "insert into usuarios(usuario,login,senha,perfil) values(?,?,md5(?),?)";
+			String create = "insert into usuarios(nomeusu,login,senha,perfil) values(?,?,md5(?),?)";
 			try {
 				// Estabelecer a conexão
 				Connection con = dao.conectar();
@@ -349,7 +349,7 @@ public class Usuarios extends JDialog {
 			txtUsuSenha.requestFocus();
 		} else {
 			// lógica principal
-			String update = "update usuarios set usuario=?, login=?, perfil=? where idusu=?";
+			String update = "update usuarios set nomeusu=?, login=?, perfil=? where idusu=?";
 			try {
 				// Estabelecer a conexão
 				Connection con = dao.conectar();
@@ -397,7 +397,7 @@ public class Usuarios extends JDialog {
 			txtUsuSenha.requestFocus();
 		} else {
 			// lógica principal
-			String update2 = "update usuarios set usuario=?, login=?,senha=md5(?), perfil=? where idusu=?";
+			String update2 = "update usuarios set nomeusu=?, login=?,senha=md5(?), perfil=? where idusu=?";
 			try {
 				// Estabelecer a conexão
 				Connection con = dao.conectar();

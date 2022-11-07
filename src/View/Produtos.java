@@ -450,15 +450,12 @@ public class Produtos extends JDialog {
 		validarIdFor.setLimit(4);
 		// txtCusto
 		RestrictedTextField validarCusto = new RestrictedTextField(txtCusto);
-		validarCusto.setOnlyNums(true);
 		validarCusto.setLimit(6);
 
 		RestrictedTextField validarLucro = new RestrictedTextField(txtLucro);
-		validarLucro.setOnlyNums(true);
 		validarLucro.setLimit(6);
 		
 		RestrictedTextField validarVenda = new RestrictedTextField(txtVenda);
-		validarVenda.setOnlyNums(true);
 		validarVenda.setLimit(6);
 		
 		
@@ -553,21 +550,20 @@ public class Produtos extends JDialog {
 				ResultSet rs = pst.executeQuery();
 				limparCampos();
 				if (rs.next()) {
-					txtIdProd.setText(rs.getString(2));
-					txtBarCode.setText(rs.getString(3));
-					txtProduto.setText(rs.getString(4));
-					txtAreaDesc.setText(rs.getString(5));
-					cboTamanho.setSelectedItem(rs.getString(6));
-					cboCor.setSelectedItem(rs.getString(7));
-					txtQuantidade.setText(rs.getString(8));
-					txtFabricante.setText(rs.getString(9));
-					String setarDataCad = rs.getString(10);
-					txtEstoque.setText(rs.getString(11));
-					txtEstoqueMin.setText(rs.getString(12));
-					txtCusto.setText(rs.getString(13));
-					txtLucro.setText(rs.getString(14));
-					txtVenda.setText(rs.getString(15));					
-					txtIdFor.setText(rs.getString(16));		
+					txtBarCode.setText(rs.getString(2));
+					txtProduto.setText(rs.getString(3));
+					txtAreaDesc.setText(rs.getString(4));
+					cboTamanho.setSelectedItem(rs.getString(5));
+					cboCor.setSelectedItem(rs.getString(6));
+					txtQuantidade.setText(rs.getString(7));
+					txtFabricante.setText(rs.getString(8));
+					String setarDataCad = rs.getString(9);
+					txtEstoque.setText(rs.getString(10));
+					txtEstoqueMin.setText(rs.getString(11));
+					txtCusto.setText(rs.getString(12));
+					txtLucro.setText(rs.getString(13));
+					txtVenda.setText(rs.getString(14));					
+					txtIdFor.setText(rs.getString(15));		
 					Date dataVal = new SimpleDateFormat("yyyy-MM-dd").parse(setarDataCad);
 					dataEntrada.setDate(dataVal);
 					btnAtualizarProd.setEnabled(true);
@@ -596,21 +592,22 @@ public class Produtos extends JDialog {
 				ResultSet rs = pst.executeQuery();
 				limparCamposCodigo();
 				if (rs.next()) {
-					txtIdProd.setText(rs.getString(2));
-					txtBarCode.setText(rs.getString(3));
-					txtProduto.setText(rs.getString(4));
-					txtAreaDesc.setText(rs.getString(5));
-					cboTamanho.setSelectedItem(rs.getString(6));
-					cboCor.setSelectedItem(rs.getString(7));
-					txtQuantidade.setText(rs.getString(8));
-					txtFabricante.setText(rs.getString(9));
-					String setarDataCad = rs.getString(10);
-					txtEstoque.setText(rs.getString(11));
-					txtEstoqueMin.setText(rs.getString(12));
-					txtCusto.setText(rs.getString(13));
-					txtLucro.setText(rs.getString(14));
-					txtVenda.setText(rs.getString(15));					
-					txtIdFor.setText(rs.getString(16));				
+					
+					txtIdProd.setText(rs.getString(1));
+					txtBarCode.setText(rs.getString(2));
+					txtProduto.setText(rs.getString(3));
+					txtAreaDesc.setText(rs.getString(4));
+					cboTamanho.setSelectedItem(rs.getString(5));
+					cboCor.setSelectedItem(rs.getString(6));
+					txtQuantidade.setText(rs.getString(7));
+					txtFabricante.setText(rs.getString(8));
+					String setarDataCad = rs.getString(9);
+					txtEstoque.setText(rs.getString(10));
+					txtEstoqueMin.setText(rs.getString(11));
+					txtCusto.setText(rs.getString(12));
+					txtLucro.setText(rs.getString(13));
+					txtVenda.setText(rs.getString(14));					
+					txtIdFor.setText(rs.getString(15));				
 					Date dataVal = new SimpleDateFormat("yyyy-MM-dd").parse(setarDataCad);
 					dataEntrada.setDate(dataVal);
 					btnAtualizarProd.setEnabled(true);

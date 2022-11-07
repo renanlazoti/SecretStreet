@@ -26,6 +26,10 @@ import model.DAO;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Relatorios extends JDialog {
 
@@ -46,44 +50,65 @@ public class Relatorios extends JDialog {
 	 * Create the dialog.
 	 */
 	public Relatorios() {
-		setBounds(100, 100, 450, 300);
+		getContentPane().setBackground(Color.WHITE);
+		setTitle("Relat\u00F3rios");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Relatorios.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
+		setBounds(100, 100, 651, 380);
 		getContentPane().setLayout(null);
 		
-		JButton btnNewButton = new JButton("Reposi\u00E7\u00E3o");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setIcon(new ImageIcon(Relatorios.class.getResource("/img/iconrelestoque NOVO.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				relatorioReposicao();
 			}
 		});
-		btnNewButton.setBounds(54, 47, 89, 23);
+		btnNewButton.setBounds(363, 181, 128, 128);
 		getContentPane().add(btnNewButton);
 		
-		JButton btnClientes = new JButton("Clientes");
+		JButton btnClientes = new JButton("");
+		btnClientes.setContentAreaFilled(false);
+		btnClientes.setBorderPainted(false);
+		btnClientes.setIcon(new ImageIcon(Relatorios.class.getResource("/img/iconrelcliaquiiiiiiiiiiii NOVO.png")));
 		btnClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				relatorioClientes();
 			}
 		});
-		btnClientes.setBounds(188, 47, 89, 23);
+		btnClientes.setBounds(125, 32, 128, 128);
 		getContentPane().add(btnClientes);
 		
-		JButton btnFornecedores = new JButton("Fornecedores");
+		JButton btnFornecedores = new JButton("");
+		btnFornecedores.setIcon(new ImageIcon(Relatorios.class.getResource("/img/iconrelforn NOVO.png")));
+		btnFornecedores.setContentAreaFilled(false);
+		btnFornecedores.setBorderPainted(false);
 		btnFornecedores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				relatorioFornecedores();
 			}
 		});
-		btnFornecedores.setBounds(109, 97, 89, 23);
+		btnFornecedores.setBounds(125, 181, 128, 128);
 		getContentPane().add(btnFornecedores);
 		
-		JButton btnNewButton_1 = new JButton("Lucro Total");
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(Relatorios.class.getResource("/img/iconclidindin NOVO.png")));
+		btnNewButton_1.setBorderPainted(false);
+		btnNewButton_1.setContentAreaFilled(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				relatorioLucro();
 			}
 		});
-		btnNewButton_1.setBounds(253, 97, 89, 23);
+		btnNewButton_1.setBounds(363, 32, 128, 128);
 		getContentPane().add(btnNewButton_1);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setEnabled(false);
+		lblNewLabel.setIcon(new ImageIcon(Relatorios.class.getResource("/img/CADEADO SS PRONTO.png")));
+		lblNewLabel.setBounds(347, 144, 410, 372);
+		getContentPane().add(lblNewLabel);
 	} // Fim do construtor
 
 	DAO dao = new DAO();
