@@ -318,6 +318,7 @@ public class Usuarios extends JDialog {
 				// Encerrar a conexão
 				JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso");
 				limparCampos();
+				txtUsuLogin.setText(null);
 				con.close();
 			} catch (SQLIntegrityConstraintViolationException ex) {
 				JOptionPane.showMessageDialog(null, "Login em uso.\nEscolha outro login.");
@@ -365,6 +366,7 @@ public class Usuarios extends JDialog {
 				// Encerrar a conexão
 				JOptionPane.showMessageDialog(null, "Dados do usuário exceto senha, alterados com sucesso");
 				limparCampos();
+				txtUsuLogin.setText(null);
 				con.close();
 			} catch (SQLIntegrityConstraintViolationException ex) {
 				JOptionPane.showMessageDialog(null, "Login em uso.\nEscolha outro login.");
@@ -414,6 +416,7 @@ public class Usuarios extends JDialog {
 				// Encerrar a conexão
 				JOptionPane.showMessageDialog(null, "Dados do usuário alterados com sucesso");
 				limparCampos();
+				txtUsuLogin.setText(null);
 				con.close();
 			} catch (SQLIntegrityConstraintViolationException ex) {
 				JOptionPane.showMessageDialog(null, "Login em uso.\nEscolha outro login.");
@@ -444,8 +447,9 @@ public class Usuarios extends JDialog {
 				// Executar a query
 				pst.executeUpdate();
 				// confimação
-				limparCampos();
 				JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso.");
+				limparCampos();
+				txtUsuLogin.setText(null);
 				// encerrar a conexão
 				con.close();
 			} catch (Exception e) {
@@ -460,7 +464,7 @@ public class Usuarios extends JDialog {
 	private void limparCampos() {
 		txtUsuId.setText(null);
 		txtUsuNome.setText(null);
-		txtUsuLogin.setText(null);
+		
 		txtUsuSenha.setEditable(true);
 		txtUsuSenha.setText(null);
 		cboUsuPerfil_1.setSelectedItem("");

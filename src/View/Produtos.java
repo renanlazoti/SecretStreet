@@ -87,7 +87,7 @@ public class Produtos extends JDialog {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
-				txtBarCode.requestFocus();
+				//txtBarCode.requestFocus();
 			}
 		});
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Produtos.class.getResource("/img/CADEADO SS PRONTO prenchido.png")));
@@ -164,10 +164,12 @@ public class Produtos extends JDialog {
 		txtBarCode = new JTextField();
 		txtBarCode.setBackground(SystemColor.menu);
 		txtBarCode.addKeyListener(new KeyAdapter() {
+			
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					PesquisarProdutoCodigodeBarras();
+					
 				}
 			}
 		});
@@ -228,7 +230,7 @@ public class Produtos extends JDialog {
 		txtFabricante.setColumns(10);
 		
 		JLabel lblNewLabel_7_1 = new JLabel("Estoque");
-		lblNewLabel_7_1.setBounds(48, 511, 108, 14);
+		lblNewLabel_7_1.setBounds(48, 549, 108, 14);
 		contentPanel.add(lblNewLabel_7_1);
 		
 		txtEstoque = new JTextField();
@@ -238,7 +240,7 @@ public class Produtos extends JDialog {
 		txtEstoque.setColumns(10);
 		
 		JLabel lblNewLabel_7_1_1 = new JLabel("Estoque Min.");
-		lblNewLabel_7_1_1.setBounds(48, 549, 139, 14);
+		lblNewLabel_7_1_1.setBounds(48, 511, 139, 14);
 		contentPanel.add(lblNewLabel_7_1_1);
 		
 		txtEstoqueMin = new JTextField();
@@ -572,6 +574,7 @@ public class Produtos extends JDialog {
 					JOptionPane.showMessageDialog(null, "Produto não cadastrado");
 					limparCampos();
 					LimparCamposFornecedor();
+					txtBarCode.requestFocus();
 				    txtIdProd.setText(null);
 					btnAdicionarProd.setEnabled(true);
 				}
@@ -616,6 +619,7 @@ public class Produtos extends JDialog {
 					JOptionPane.showMessageDialog(null, "Produto não cadastrado");
 					limparCamposCodigo();
 					LimparCamposFornecedor();
+					txtBarCode.requestFocus();
 					btnAdicionarProd.setEnabled(true);
 				}
 				con.close();
@@ -629,7 +633,10 @@ public class Produtos extends JDialog {
 		 */
 				
 		private void adicionarProduto() {	
-			if (txtProduto.getText().isEmpty()) {
+			 if (txtBarCode.getText().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Preencha o BarCode do Produto");
+				txtBarCode.requestFocus();
+			} else if (txtProduto.getText().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "Preencha o Nome do Produto");
 				txtProduto.requestFocus();
 			} else if (cboTamanho.getSelectedItem().equals("")) {
@@ -647,12 +654,12 @@ public class Produtos extends JDialog {
 			} else if (txtFabricante.getText().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "Informe o fabricante do produto");
 				txtFabricante.requestFocus();
-			} else if (txtEstoque.getText().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Informe o estoque do produto");
-				txtEstoque.requestFocus();
 			} else if (txtEstoqueMin.getText().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "Informe o estoque mínimo do produto");
 				txtEstoqueMin.requestFocus();
+			} else if (txtEstoque.getText().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Informe o estoque do produto");
+				txtEstoque.requestFocus();
 			} else if (txtCusto.getText().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "Informe o custo do produto");
 				txtCusto.requestFocus(); 

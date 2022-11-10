@@ -24,11 +24,11 @@ import java.awt.Toolkit;
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
-	private JButton btnUsuarios;
+	public JButton btnUsuarios;
 	private JButton btnClientes;
 	private JButton btnFornecedores;
 	private JButton btnProdutos;
-	private JButton btnRelatorios;
+	public JButton btnRelatorios;
 	private JButton btnAjuda;
 	public final JPanel panelUsuario = new JPanel();
 	public JLabel lblPerfil;

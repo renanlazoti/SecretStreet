@@ -178,6 +178,8 @@ public class Login extends JFrame {
 						principal.lblUsuario.setText("Usuário: " + rs.getString(2));
 						principal.lblPerfil.setText("Login: " + rs.getString(5));
 						principal.panelUsuario.setBackground(Color.black);
+						principal.btnRelatorios.setEnabled(false);
+						principal.btnUsuarios.setEnabled(false);
 						// fechar a tela de login 
 						con.close();
 						this.dispose();
@@ -187,6 +189,7 @@ public class Login extends JFrame {
 
 				} else {
 					JOptionPane.showMessageDialog(null, "Login e/ou senha inválido(s)");
+					
 				}
 
 			} catch (Exception e) {
